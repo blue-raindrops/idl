@@ -17,7 +17,7 @@
       <% @projects.each do |p| %>
         <li class = "gridblock">
           <h3><b><%= link_to p.title, p %></b></h3>
-          <h1>[IMAGE]</h1>
+          <p><%= p.people %></p>
         </li>
       <% end %>
     </ul>
