@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+    <div class="headerbar large-12 medium-12 small-12 columns">
+      <h2>Publications</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+
+  <% if !current_user.nil? %>
+    <div class="large-12 medium-12 small-12 columns"> 
+      <%= link_to "Add new publication", new_publication_path %>
+    </div>
+      
+    <div class="large-12 medium-12 small-12 columns"> 
+      <h5><b>2014</b></h5>
+        <% @publications.each do |p| %>
+          <% $year = p.year %>
+          <% if $year == 2014 %>
+            <p><%= link_to "Edit", p %><br/>
+            <%= p.citation %></p>
+          <% end %>
+        <% end %>
+
+      <h5><b>2013</b></h5>
+        <% @publications.each do |p| %>
+          <% $year = p.year %>
+          <% if $year == 2013%>
+              <p><%= link_to "Edit", p %><br/>
+              <%= p.citation %></p>
+          <% end %>
+        <% end %>
+
+      <h5><b>2012</b></h5>
+        <% @publications.each do |p| %>
+          <% $year = p.year %>
+          <% if $year == 2012%>
+              <p><%= link_to "Edit", p %><br/>
+              <%= p.citation %></p>
+          <% end %>
+        <% end %>
+
+      <h5><b>2011</b></h5>
+        <% @publications.each do |p| %>
+          <% $year = p.year %>
+          <% if $year == 2011%>
+              <p><%= link_to "Edit", p %><br/>
+              <%= p.citation %></p>
+          <%end%>
+        <% end %>
+
+      <h5><b>Miscellaneous</b></h5>
+        <% @publications.each do |p| %>
+          <% $year = p.year %>
+          <% if $year < 2011 || $year > 2014 %>
+            <p><%= link_to "Edit", p %><br/>
+            <%= p.citation %></p>
+          <% end %>
+      <% end %>
+    <% else %>
+      <div class="large-12 medium-12 small-12 columns"> 
+       <p>You must be logged in as the administrator for access to this feature.</p>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>

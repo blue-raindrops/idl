@@ -1,0 +1,16 @@
+<div class="contain-to-grid">
+  <nav class="top-bar">
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if current_user.nil? %>
+          <li><%= link_to "Login", new_session_path %></li>
+        <% else %>
+          <li><%= link_to "Logout", @session, method: :delete, data: {confirm: "Are you sure you wish to logout?"} %></li>
+        <% end %>
+      </ul>
+    </section>
+
+  </nav>
+</div>

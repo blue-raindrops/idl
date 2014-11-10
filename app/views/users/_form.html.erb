@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+    <div class="large-6 medium-6 small-12 columns">
+      <% if !current_user.nil? %>
+        <%= form_for @user do |u| %>
+          <label>Name <%= u.text_field :name, placeholder: 'Name' %></label>
+          <label>Email <%= u.text_field :email, placeholder: 'Email address' %></label>
+          <label>Password <%= u.password_field :password, placeholder: 'Password' %></label>
+          <%= u.submit 'Submit', class: 'button' %>
+        <% end %>
+
+      <% else %>
+        <p>You must be logged in as the administrator for access to this feature.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

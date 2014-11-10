@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+    <div class="large-6 medium-6 small-12 columns">
+      <% if !current_user.nil? %>
+        <%= form_for @person do |u| %>
+          <label>Name <%= u.text_field :name, placeholder: 'Name' %></label>
+          <label>Title <%= u.text_field :title, placeholder: 'Academic title' %></label>
+          <label>Email <%= u.text_field :contact, placeholder: 'Email address' %></label>
+          <label>Site <%= u.text_field :site, placeholder: 'Website' %></label>
+          <label>Projects <%= u.text_field :projects, placeholder: 'Project 1, Project 2...' %></label>
+          <%= u.submit 'Submit', class: 'button' %>
+        <% end %>
+      <% else %>
+        <p>You must be logged in as the administrator for access to this feature.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

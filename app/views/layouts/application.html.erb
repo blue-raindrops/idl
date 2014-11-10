@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Interaction Design Lab" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navigation' %>
+    
+    <div class="row show-for-medium-up">
+      <div class="large-12 medium-12 columns">
+        <h1><%= link_to "INTERACTION DESIGN LAB", root_url %></h1>
+      </div>
+    </div>
+
+    <div class="row show-for-small-only">
+      <div class="small-12 columns">
+        <h1><%= link_to "INTERACTION DESIGN LAB", root_url %></h1>
+      </div>
+    </div>
+
+
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

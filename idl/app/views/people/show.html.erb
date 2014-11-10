@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+    <div class="headerbar large-12 medium-12 small-12 columns">
+      <h2>Profile</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+    <div class="large-12 medium-12 small-12 columns">
+      <%= link_to "Back to people", people_path %>
+      <% if !current_user.nil? %>
+       | <%= link_to "Edit person", edit_person_path %>
+      <% end %>
+      <h3><%= @person.name %></h3>
+        <p><b>Title:</b> <%= @person.title %><br/>
+        <b>Email:</b> <%= @person.contact %><br/>
+        <b>Site:</b> <%= @person.site %><br/>
+        <b>Projects:</b> <%= @person.projects %></p>
+    </div>
+  </div>
+</div>

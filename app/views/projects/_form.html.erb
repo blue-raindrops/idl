@@ -1,0 +1,16 @@
+<div class='row'>
+  <div class="large-12 medium-12 small-12 columns">
+    <div class="large-6 medium-6 small-12 columns">
+      <% if !current_user.nil? %>
+        <%= form_for @project do |p| %>
+          <label>Title <%= p.text_field :title, placeholder: 'Project title' %></label>
+          <label>People <%= p.text_field :people, placeholder: 'Contributor 1, Contributor 2...' %></label>
+          <label>Description <%= p.text_area :description, placeholder: 'Project description' %></label>
+          <%= p.submit 'Submit', class: 'button' %>
+        <% end %>
+      <% else %>
+        <p>You must be logged in as the administrator for access to this feature.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

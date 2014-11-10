@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  index: MyString
+  people: MyString
+  projects: MyString
+  publications: MyString
+  contact: MyString
+
+two:
+  index: MyString
+  people: MyString
+  projects: MyString
+  publications: MyString
+  contact: MyString

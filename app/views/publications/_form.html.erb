@@ -1,0 +1,18 @@
+<div class='row'>
+  <div class="large-12 medium-12 small-12 columns">
+    <div class="large-6 medium-6 small-12 columns">
+    <% if !current_user.nil? %>
+       <%= link_to 'Back to publications', publications_path %> 
+
+       
+        <%= form_for @publication do |p| %>
+          <label>Year <%= p.text_field :year, placeholder: 'Publication year' %></label>
+          <label>Publication <%= p.text_area :citation, placeholder: 'Citation' %></label>
+          <%= p.submit 'Submit', class: 'button' %>
+        <% end %>
+      <% else %>
+        <p>You must be logged in as the administrator for access to this feature.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+    <div class="headerbar large-12 medium-12 small-12 columns">
+      <h2>Publications</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+    <% if !current_user.nil? %>
+    <div class="large-12 medium-12 small-12 columns">
+      <%= link_to "Add new publication", new_publication_path %> | <%= link_to "View all", "publications/indexall" %>
+    </div>
+    <% end %>
+
+    <div id="tabshift">
+      <dl id="tabsrow" class="tabs" data-tab>
+        <dd class="active"><a href="#panel2014">2014</a></dd>
+        <dd><a href="#panel2013">2013</a></dd>
+        <dd><a href="#panel2012">2012</a></dd>
+        <dd><a href="#panel2011">2011</a></dd>
+      </dl>
+    </div> <!-- end of tabs shift -->
+    
+    <div id="tabscontent" class="tabs-content">
+      <% @publications.each do |p| %>
+        <% $year = p.year %>
+
+        <div class="content active" id="panel2014">
+          <% if $year == 2014%>
+            <% if !current_user.nil? %>
+              <%= link_to "Edit", p %>
+            <% end %>
+            <p><%= p.citation %></p>
+          <% end %>
+        </div>
+
+      <div class="content" id="panel2013">
+        <% if $year == 2013%>
+            <% if !current_user.nil? %>
+              <%= link_to "Edit", p %>
+            <% end %>
+            <p><%= p.citation %></p>
+        <% end %>
+      </div>
+
+      <div class="content" id="panel2012">
+        <% if $year == 2012%>
+            <% if !current_user.nil? %>
+              <%= link_to "Edit", p %>
+            <% end %>
+            <p><%= p.citation %></p>
+        <% end %>
+      </div>
+
+      <div class="content" id="panel2011">
+        <% if $year == 2011%>
+            <% if !current_user.nil? %>
+              <%= link_to "Edit", p %>
+            <% end %>
+            <p><%= p.citation %></p>
+        <% end %>
+      </div>
+
+      <% end %>
+
+      </div> <!-- end of tabs content -->
+  </div>
+</div>

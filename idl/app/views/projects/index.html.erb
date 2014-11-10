@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+    <div class="headerbar large-12 medium-12 small-12 columns">
+      <h2>Projects</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns"> 
+    <% if !current_user.nil? %>
+      <div class="large-12 medium-12 small-12 columns"> 
+        <%= link_to "Add new project", new_project_path %>
+      </div>
+    <% end %>
+   <ul class="gridblock_ul medium-block-grid-3 large-block-grid-4 small-block-grid-1">
+      <% @projects.each do |p| %>
+        <li class = "gridblock">
+          <h3><b><%= link_to p.title, p %></b></h3>
+          <h1>[IMAGE]</h1>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

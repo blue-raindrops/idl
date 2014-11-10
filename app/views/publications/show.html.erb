@@ -1,0 +1,17 @@
+<div class='row'>
+  <div class="large-12 medium-12 small-12 columns">
+    <div class="headerbar large-12 medium-12 small-12 columns">
+      <h2>Publication</h2>
+    </div>
+
+    <div class="large-12 medium-12 small-12 columns">
+      <%= link_to 'Back to publications', publications_path %>
+      <% if !current_user.nil? %>
+         | <%= link_to 'Edit', edit_publication_path %> | <%= link_to "Delete", @publication, method: :delete, data: { confirm: "Are you sure you wish to delete?" } %>
+      <% end %>
+      <p><b>Year: </b><%= @publications.year %><br/>
+      <b>Citation: </b><%= @publications.citation %><br/>
+
+    </div>
+  </div>
+</div>
